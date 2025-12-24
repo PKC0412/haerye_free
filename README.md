@@ -7,7 +7,7 @@
 
 ## 🌐 Quick Start
 
-**Web App URL**: https://pkc0412.github.io/Haerye/
+**Web App URL**: https://www.haerye.com/
 
 Access instantly in your browser or install on your home screen to use like a native app.
 
