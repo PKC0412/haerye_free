@@ -1,0 +1,89 @@
+/* Grammar Heat Map Styles (문법 이해도 히트맵) */
+
+.grammar-heat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 13rem; /* 약 4행 기준 높이 */
+  overflow-y: auto;
+}
+
+.grammar-heat-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+  background-color: var(--bg-tertiary);
+  border-radius: 8px;
+}
+
+.grammar-heat-label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  flex: 1;
+}
+
+.grammar-heat-level {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.heat-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* 잘함 - 인디고 (원래 테마 색) */
+.heat-dot.on {
+  background-color: #6366f1;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.6);
+}
+
+/* 보통 - 노랑 */
+.heat-dot.mid {
+  background-color: #eab308;
+  box-shadow: 0 0 8px rgba(234, 179, 8, 0.6);
+}
+
+/* 부족 - 빨강 */
+.heat-dot.off {
+  background-color: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.4);
+}
+
+.grammar-heat-text {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-left: 0.5rem;
+  min-width: 40px;
+}
+
+.grammar-heat-legend {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.85rem;
+}
+
+.grammar-heat-legend span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--text-secondary);
+}
+
+/* Responsive - Grammar Heat */
+@media (max-width: 640px) {
+  .grammar-heat-legend {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}

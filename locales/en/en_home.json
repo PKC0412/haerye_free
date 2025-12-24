@@ -1,0 +1,102 @@
+{
+  "home": {
+    "logo_subtitle": "Start learning Korean",
+    "tab_origin": "Origin of Haerye",
+    "tab_method": "Learning Method",
+    "tab_usage": "How to Use",
+    "tab_faq": "FAQ",
+    "tab_comparison": "Free / Pro Comparison",
+    "content_origin": {
+      "title": "Hangeul and Haerye",
+      "text": "Haerye (解例) is a name that comes from the Hunminjeongeum Haerye, meaning “explanations and examples.” Just as King Sejong explained the principles of Hangeul with clear reasoning and examples, this app is designed to help you learn Korean through structured explanations and rich examples.",
+      "point1": "📖 Carrying on the spirit of the Hunminjeongeum Haerye",
+      "point2": "🎯 A structured, science-based learning approach",
+      "point3": "🌍 Designed for learners worldwide"
+    },
+    "content_method": {
+      "title": "An Effective Learning Order",
+      "intro": "Haerye supports systematic Korean learning from beginner to advanced. Based on standard Korean-language curricula for non-native learners, it’s designed to help you progress naturally step by step.",
+      "step1_title": "1. Learn the Hangul letters",
+      "step1_desc": "Learn 19 consonants and 21 vowels together with their sounds. With repeated practice of shapes, pronunciation, and combination rules, you’ll quickly reach the stage where you can read Hangul.",
+      "step2_title": "2. Basic greetings & everyday expressions",
+      "step2_desc": "Start with the most common daily phrases like “Hello,” “Thank you,” and “Sorry.” Learn key basics needed for simple conversation first—self-introductions, numbers, dates, days of the week, and more.",
+      "step3_title": "3. Core vocabulary",
+      "step3_desc": "Learn 300+ essential words organized by themes such as family, food, places, weather, and emotions. Each word comes with example sentences so you can understand real usage contexts.",
+      "step4_title": "4. Fundamental grammar",
+      "step4_desc": "Learn core grammar such as particles (이/가, 은/는, 을/를), tenses (past/present/future), and polite vs casual speech. Lessons are built as “short explanation + 2–3 examples” so you can understand and use them quickly.",
+      "step5_title": "5. Listening & speaking practice",
+      "step5_desc": "Practice understanding real-life conversations. Use TTS (text-to-speech) to repeatedly listen to words and sentences, improve pronunciation, and build speaking skills by shadowing.",
+      "step6_title": "6. Expand reading & writing",
+      "step6_desc": "Start with short sentences and gradually practice reading longer texts. Write simple diaries or messages to apply the vocabulary and grammar you’ve learned in real situations.",
+      "tools_title": "Study tools",
+      "tools_desc": "Flashcards: Use them as a review tool throughout the course. A smart spaced-review system shows missed cards more often and familiar cards less often."
+    },
+    "content_usage": {
+      "title": "How to Use Haerye",
+      "intro": "Haerye follows a simple flow: “open the app → choose a module → study → review.” Even 5–10 minutes a day builds your learning history and helps you see at a glance what to improve next.",
+      "usage1_title": "1. Start the app & the Home screen",
+      "usage1_desc": "When you open Haerye in your browser, the Home screen first shows today’s goals, progress, and a recommended learning path. Tap “Start learning” to jump right back into where you last left off.",
+      "usage2_title": "2. Choose a learning module",
+      "usage2_desc": "From the left sidebar, choose Hangul, Vocabulary, Grammar, or Flashcards. Each module shows your current progress and how many items remain, so you can start without overthinking.",
+      "usage3_title": "3. The card-based study interface",
+      "usage3_desc": "The front of a card shows a Korean word or sentence; the back shows meaning, pronunciation, and examples. As you flip cards, choose “I know it / Still unsure,” and the system automatically adjusts your review priority.",
+      "usage4_title": "4. Settings & language selection",
+      "usage4_desc": "In Settings (top icons or menu), you can change the interface language, auto-play (TTS), dark mode, and more. Settings are saved in your browser and persist on your next visit.",
+      "usage5_title": "5. Check your progress",
+      "usage5_desc": "On the Stats screen, you’ll see graphs for total cards studied, accuracy, study streaks, and more. You can review “how far you’ve come” and “what to focus on next.”"
+    },
+    "content_faq": {
+      "title": "Frequently Asked Questions"
+    },
+    "faq": {
+      "q1": "Q. Can I use it offline?",
+      "a1": "A. Yes. We support some offline features via PWA (Progressive Web App). After you visit once, content is cached so you can study basic lessons without an internet connection.",
+      "q2": "Q. I can’t hear the pronunciation well (especially on iPhone)",
+      "a2": "A. On iOS, check the Silent Mode switch and increase your volume. In Settings → Accessibility → Spoken Content, downloading a Korean voice can also improve quality.",
+      "q3": "Q. Where is my study history saved?",
+      "a3": "A. All study records are saved in your browser’s LocalStorage. If you clear browser data, your records will be deleted as well.",
+      "q4": "Q. Can I install it as a mobile app?",
+      "a4": "A. Yes! On Android (Chrome), go to Menu → “Add to Home screen.” On iOS (Safari), tap Share → “Add to Home Screen” to use it like an app.",
+      "q5": "Q. How far can I learn?",
+      "a5": "A. Currently, we support levels from beginner to advanced—from Hangul basics to everyday conversation and advanced grammar."
+    },
+    "content_comparison": {
+      "title": "Free vs Pro Feature Comparison",
+      "intro": "Haerye’s free version is enough for solid learning. ✨ If you want deeper analytics and advanced study features, consider the PRO version!",
+      "footer_note": "PRO version coming soon. (Estimated price: monthly / $6.99–$7.99)",
+      "btn_upgrade": "Before PRO launches"
+    },
+    "comparison": {
+      "th_feature": "Feature",
+      "th_free": "Free",
+      "th_pro": "PRO",
+      "category": {
+        "learning": "Core Learning Features",
+        "analytics": "Learning Analytics & Stats",
+        "utility": "Utility Features"
+      },
+      "item": {
+        "vocab": "Topic-based vocabulary lists",
+        "flashcard": "Flashcard memorization",
+        "grammar_basic": "Basic grammar",
+        "dictation": "Dictation practice",
+        "pronunciation": "Pronunciation coaching",
+        "progress": "Real-time progress tracking",
+        "streak": "Study streaks",
+        "dashboard": "Detailed stats dashboard",
+        "weakness": "Weakness analysis report",
+        "i18n": "Multilingual interface",
+        "theme": "Dark / light theme",
+        "offline": "Offline mode (PWA)",
+        "voice_select": "Voice selection",
+        "tts_speed": "TTS speed control"
+      },
+      "status": {
+        "included": "✅ Included",
+        "excluded": "❌ Not included",
+        "new": "✨ New",
+        "extended": "✅ Extended"
+      }
+    }
+  }
+}

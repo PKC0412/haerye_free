@@ -1,0 +1,215 @@
+/* Mobile Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.9);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(0,0,0,0.05);
+  padding: 0.8rem 2rem 1.5rem;
+  border-radius: 2rem 2rem 0 0;
+  box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+  z-index: 50;
+  transition: background-color 0.3s;
+}
+
+[data-theme="dark"] .bottom-nav {
+  background: rgba(30, 41, 59, 0.9); /* Dark background */
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-item i { font-size: 1.5rem; }
+.nav-item span { font-size: 0.7rem; font-weight: 600; }
+.nav-item.active, .nav-item:hover { color: var(--accent-primary); }
+
+/* Floating Action Button (Center) */
+.fab-container { position: relative; top: -2.5rem; }
+.fab-button {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-red), var(--color-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.6rem;
+  box-shadow: 0 8px 20px rgba(53, 85, 136, 0.3);
+  border: 4px solid var(--bg-primary);
+  transition: transform 0.2s;
+}
+.fab-button:hover { transform: scale(1.1) rotate(10deg); }
+
+/* Sidebar Progress Card (Hidden on Mobile) */
+.sidebar-progress-card {
+  display: none;
+}
+
+/* Desktop Sidebar (Transformation) */
+@media (min-width: 1024px) {
+  .bottom-nav {
+    grid-area: sidebar;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    width: 100%;
+    height: 100%;
+    background: #273a5a; /* Indigo Sidebar */
+    border-radius: 0;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Space between menu and progress card */
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-top: none;
+    box-shadow: none;
+  }
+  
+  [data-theme="dark"] .bottom-nav {
+    background: #1e293b; /* Darker slate for dark mode sidebar */
+  }
+
+  /* Add Logo to Sidebar top via pseudo-element */
+  .bottom-nav::before {
+    content: '해례 Haerye';
+    display: block;
+    font-family: "Noto Serif KR", serif;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: auto; /* Push content up */
+  }
+  
+  .nav-item {
+    flex-direction: row;
+    gap: 1rem;
+    color: #94aed3; /* Light Indigo text */
+    padding: 1rem;
+    width: 100%;
+    border-radius: 12px;
+    transition: 0.2s;
+    box-sizing: border-box; /* Ensure padding doesn't overflow */
+  }
+  
+  .nav-item:hover, .nav-item.active {
+    background: rgba(255,255,255,0.1);
+    color: white;
+  }
+  
+  .nav-item i { font-size: 1.2rem; }
+  .nav-item span { font-size: 1rem; font-weight: 500; }
+
+  /* Hide Mobile FAB in Sidebar */
+  .fab-container { display: none; } 
+
+  /* Sidebar Progress Card (Visible on Desktop) */
+  .sidebar-progress-card {
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    color: white;
+  }
+
+  .sidebar-progress-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
+  }
+
+  .sidebar-progress-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    opacity: 0.9;
+  }
+
+  .sidebar-progress-percent {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--color-yellow);
+  }
+
+  .sidebar-progress-bar-bg {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+  }
+
+  .sidebar-progress-bar-fill {
+    height: 100%;
+    background-color: var(--color-yellow);
+    border-radius: 4px;
+    transition: width 0.5s ease;
+  }
+
+  .sidebar-progress-desc {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    margin: 0 0 1rem 0;
+    text-align: center;
+  }
+
+  .sidebar-continue-btn {
+    width: 100%;
+    background-color: var(--color-red);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    box-shadow: 0 4px 10px rgba(217, 56, 56, 0.3);
+  }
+
+  .sidebar-continue-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(217, 56, 56, 0.4);
+  }
+}
+
+/* Discord link: hide on mobile, show on desktop (override modal-footer) */
+.bottom-nav .sidebar-discord-link { display: none; }
+
+@media (min-width: 1024px) {
+  .bottom-nav .sidebar-discord-link { display: block; }
+ .sidebar-progress-card ~ .sidebar-discord-link {
+    margin-top: 15px;
+	margin-bottom: -10px;
+  }

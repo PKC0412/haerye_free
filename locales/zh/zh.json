@@ -1,0 +1,244 @@
+{
+  "menu": {
+    "hangul": "学习韩语字母",
+    "vocabulary": "词汇",
+    "flashcard": "单词卡",
+    "grammar": "语法",
+    "help": "帮助",
+    "stats": "学习统计"
+  },
+  "home": {
+    "menu": {
+      "study_menu_title": "学习菜单",
+      "hangul_desc": "基础元音和辅音",
+      "vocab_desc": "必备词汇",
+      "flashcard_desc": "复习",
+      "grammar_desc": "句子结构"
+    },
+    "wide_card": {
+      "new": "新",
+      "topic": "日常会话",
+      "title": "学习基本问候语",
+      "desc": "从问候开始！"
+    },
+    "logo_subtitle": "开始学习韩语吧。"
+  },
+  "nav": {
+    "home": "首页",
+    "learn": "学习",
+    "stats": "统计",
+    "settings": "设置",
+    "goal": "今日目标",
+    "streak": "连续学习",
+    "day_suffix": " 天",
+    "continue": "继续"
+  },
+  "goal": {
+    "modal_title": "恭喜！",
+    "modal_desc": "您已达成今日目标！",
+    "confirm": "太棒了！"
+  },
+  "settings": {
+    "title": "设置",
+    "voice_title": "语音设置 (TTS)",
+    "rate": "语速",
+    "pitch": "音调",
+    "volume": "音量",
+    "voice_select_title": "选择语音",
+    "voice_label": "语音",
+    "default_voice": "默认 (系统)",
+    "accessibility_title": "辅助功能",
+    "auto_read": "点击时自动朗读",
+    "reset": "重置设置",
+    "data_title": "学习数据",
+    "data_warning": "⚠️ 今日目标、统计数据和学习记录将全部被删除。",
+    "data_reset": "🗑️ 重置学习数据",
+    "reset_confirm": "⚠️ 您确定要重置所有学习数据吗？",
+    "data_reset_confirm": "⚠️ 所有学习记录将被删除。您真的要继续吗？"
+  },
+  "language": {
+    "modalTitle": "语言",
+    "modalDescription": "请选择界面语言。您可以随时更改。",
+    "names": {
+      "en": "English",
+      "zh": "简体中文",
+      "ja": "日本語",
+      "ru": "Русский",
+      "es": "Español",
+      "fr": "Français",
+      "it": "Italiano",
+      "de": "Deutsch",
+      "th": "ไทย",
+      "pt": "Português",
+      "nl": "Nederlands"
+    }
+  },
+  "help": {
+    "header": "开发者与联系方式",
+    "description": "如果您有任何问题、错误报告或建议，请通过以下渠道联系我们。",
+    "creatorLabel": "开发者："
+  },
+  "vocab": {
+    "play": "播放音频"
+  },
+  "grammar": {
+    "hear": "收听"
+  },
+  "common": {
+    "listen": "收听",
+    "example": "例句",
+    "romanization": "罗马音",
+    "nodata": "暂无数据。",
+    "confirm": "确认",
+    "cancel": "取消"
+  },
+  "flashcard": {
+    "empty": "没有可学习的单词。",
+    "session": {
+      "summary": "进度：{current} / {total} 个单词",
+      "shuffled": "随机",
+      "sequential": "顺序"
+    },
+    "total_words": "单词总数",
+    "controls": {
+      "hear": "收听",
+      "know": "认识",
+      "dontKnow": "复习"
+    },
+    "progress": {
+      "label": "进度：{done} / {total}"
+    },
+    "hint": {
+      "reveal": "点击卡片查看含义",
+      "romanizationLabel": "罗马音："
+    },
+    "result": {
+      "title": "做得好！",
+      "completed": "您已学习了 {total} 个单词。",
+      "accuracy": "准确率：{accuracy}%",
+      "stats": "已掌握：{known} | 需复习：{unknown}",
+      "restart": "随机并重新开始"
+    }
+  },
+  "category": {
+    "all": "全部",
+    "greetings": "问候",
+    "basic": "基础",
+    "food": "食物",
+    "people": "人物",
+    "places": "场所",
+    "transportation": "交通",
+    "verbs_daily": "日常动词",
+    "verbs_actions": "行为动词",
+    "adjectives": "形容词",
+    "numbers": "数字",
+    "time": "时间/日期",
+    "colors": "颜色",
+    "body": "身体",
+    "nature": "自然",
+    "school": "学校"
+  },
+  "발음 듣기": "听发音",
+  "자음": "辅音",
+  "모음": "元音",
+  "받침": "收音 (Batchim)",
+  "로마자 표기:": "罗马音：",
+  "이전": "上一页",
+  "다음": "下一页",
+  "설명:": "说明：",
+  "예시:": "例句：",
+  "설명이 아직 준비되지 않았습니다.": "说明尚未准备好。",
+  "예시가 아직 준비되지 않았습니다.": "例句尚未准备好。",
+  "예문": "例句",
+  "grammar_category_sentence_structure": "句子结构",
+  "grammar_category_particles": "助词",
+  "grammar_category_tenses": "时态",
+  "grammar_category_negation": "否定",
+  "grammar_category_connectives": "连接词",
+  "grammar_category_comparison": "比较",
+  "grammar_category_ending": "终结词尾",
+  "grammar_category_aux_verbs": "辅助动词",
+  "grammar_category_voice": "语态（被动/使动）",
+  "grammar_category_conditionals": "条件句",
+  "grammar_category_quotations": "引用",
+  "grammar_group_sentence_structure_basic_order": "基本语序 (SOV)",
+  "grammar_group_sentence_structure_elements": "句子成分",
+  "grammar_group_sentence_structure_types": "句子类型",
+  "grammar_group_particles_case": "格助词",
+  "grammar_group_particles_auxiliary": "辅助助词",
+  "grammar_group_particles_conjunctive": "连接助词",
+  "grammar_group_tenses_present": "现在时",
+  "grammar_group_tenses_past": "过去时",
+  "grammar_group_tenses_future": "将来时",
+  "grammar_group_tenses_progressive": "进行时 (-고 있어요)",
+  "grammar_group_tenses_experiential": "经验表现 (-아/어 본 적이 있다)",
+  "grammar_group_negation_an": "用“안”表示否定",
+  "grammar_group_negation_mot": "用“못”表示否定",
+  "grammar_group_negation_ji_anhda": "用“-지 않다”表示否定",
+  "grammar_group_negation_ji_mothada": "用“-지 못하다”表示否定",
+  "grammar_group_connectives_go": "连接词 -고",
+  "grammar_group_connectives_aseo_eoseo": "连接词 -아서/어서",
+  "grammar_group_connectives_jiman": "连接词 -지만",
+  "grammar_group_connectives_myeonseo": "连接词 -면서",
+  "grammar_group_connectives_geona": "连接词 -거나",
+  "grammar_group_comparison_boda": "比较表现 보다",
+  "grammar_group_comparison_mankeum": "比较表现 만큼",
+  "grammar_group_comparison_cheoreom": "比较表现 처럼",
+  "grammar_group_ending_polite_ayo_eoyo": "敬语词尾 -아요/어요",
+  "grammar_group_ending_formal_sumnida": "格式体词尾 -습니다/-습니까",
+  "grammar_group_aux_verbs_want_gosipda": "辅助动词 -고 싶다",
+  "grammar_group_aux_verbs_try_boda": "辅助动词 -아/어 보다",
+  "grammar_group_aux_verbs_must_eya_hada": "辅助动词 -아/어야 하다",
+  "grammar_group_voice_passive_ajida": "被动 -아/어지다",
+  "grammar_group_voice_causative_gehada": "使动 -게 하다",
+  "grammar_group_conditionals_myeon_basic": "条件句 -(으)면",
+  "grammar_group_conditionals_tomyeon_future": "条件句 -(으)면 (将来/反复)",
+  "grammar_group_quotations_declare_dago": "引用 -다고 하다",
+  "grammar_group_quotations_say_lago": "引用 -라고 하다",
+  "ttsWarning": {
+    "modalTitle": "韩语语音不可用",
+    "modalDescription": "您的浏览器或设备目前不提供韩语的文字转语音（TTS）语音。您仍然可以学习全部内容，但发音音频可能无法正常播放，或者会使用其他语言的语音。"
+  },
+  "stats": {
+    "mastery_title": "单词掌握度分析",
+    "mastery_desc": "根据单词卡学习情况显示您的熟练程度。",
+    "known_words": "预计已掌握单词数",
+    "mastery_good": "强项单词",
+    "mastery_normal": "一般单词",
+    "mastery_bad": "薄弱单词",
+    "recent_wrong_title": "最近常错单词（最近7天）",
+    "recent_wrong_empty": "最近7天内没有经常出错的单词。",
+    "word_detail_badge": "单词进度详情",
+    "word_detail_empty": "尚未记录单词数据。请先尝试用单词卡学习。",
+    "grammar_heatmap_title": "语法理解热力图",
+    "grammar_heatmap_desc": "直观显示您复习每个语法类别的频率。",
+    "legend_good": "强",
+    "legend_mid": "中",
+    "legend_bad": "弱",
+    "next_learning": "您的个性化下一步",
+    "today_recommend": "今日推荐",
+    "vocab_recommend": "词汇推荐",
+    "grammar_recommend": "语法推荐",
+    "quick_access": "快捷入口",
+    "continue_today_title": "继续今日学习",
+    "continue_today_desc": "您就快完成了！让我们坚持到底。",
+    "review_words_title": "复习难点单词",
+    "review_words_desc": "最近有些单词比较难。让我们用单词卡复习它们。",
+    "grammar_focus_prefix": "语法 - ",
+    "grammar_focus_suffix": " 练习",
+    "grammar_focus_desc": "这个语法领域可能需要更多练习。让我们复习一些例句！",
+    "today_goal": "今日目标达成度",
+    "helper_today": "显示您今日学习目标的完成情况。",
+    "streak_title": "学习连续天数",
+    "day_suffix": "天",
+    "last_study": "最后学习日期",
+    "no_study": "无记录",
+    "by_category": "分类进度"
+  },
+  "statsTrend": {
+    "title": "📊 本周学习趋势",
+    "subtitle": "您本周的学习进度（周一至周日）",
+    "empty": "暂无本周学习数据可显示。",
+    "loading": "正在加载您的学习数据..."
+  }
+}

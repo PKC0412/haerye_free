@@ -1,0 +1,251 @@
+/* Header Base (Mobile) */
+.app-header {
+  background-color: #273a5a; /* Dark Indigo */
+  color: white;
+  padding: 3rem 1.5rem 2.5rem;
+  border-radius: 0 0 2.5rem 2.5rem;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-lg);
+  grid-area: header; /* For Grid Layout */
+}
+
+/* Decorative Background Pattern */
+.header-bg-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Taegeuk Circles (Decorative) */
+.header-deco-circle {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.25;
+  pointer-events: none;
+}
+.header-deco-circle.red { background-color: var(--color-red); top: -50px; right: -50px; }
+.header-deco-circle.blue { background-color: var(--color-blue); bottom: -50px; left: -50px; }
+
+.header-content { position: relative; z-index: 10; }
+
+/* ✅ flex-wrap으로 2줄 레이아웃 */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Logo Styles */
+.header-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  order: 1; /* 첫 번째 */
+}
+
+.header-logo svg {
+  height: 40px;
+  width: auto;
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* ✨ 모바일: 로고 마크 가로선 하얀색 (기본) */
+.logo-mark-line {
+  fill: white;
+}
+
+/* ✅ 버튼을 두 번째로 */
+.header-actions { 
+  display: flex; 
+  gap: 0.5rem;
+  flex-shrink: 0;
+  order: 2; /* 두 번째 (로고 오른쪽) */
+}
+
+/* ✅ 텍스트를 세 번째로 (다음 줄) */
+.header-text {
+  flex: 1;
+  min-width: 100%; /* 다음 줄로 */
+  padding: 0;
+  margin-top: 0.5rem;
+  order: 3; /* 세 번째 (둘째 줄) */
+}
+
+.sub-title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #a3bffa;
+  margin-bottom: 0.2rem;
+}
+
+.app-logo-text {
+  font-family: "Noto Serif KR", serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin: 0;
+  color: white;
+}
+.app-logo-sub { font-family: "Noto Sans KR", sans-serif; font-size: 1rem; font-weight: 300; opacity: 0.8; margin-left: 0.5rem; }
+
+.icon-btn {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  overflow: hidden;
+  padding: 0;
+  flex-shrink: 0;
+}
+.icon-btn:hover { background: rgba(255,255,255,0.25); }
+
+/* Header Flag Icon Style */
+.header-lang-flag {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+/* Progress Summary Card */
+.progress-summary-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.progress-info { flex: 1; }
+.progress-label {
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.progress-sub { font-size: 0.75rem; color: #cbd5e1; margin-top: 0.25rem; }
+
+.continue-btn {
+  background-color: var(--color-red);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(217, 56, 56, 0.4);
+  transition: 0.2s;
+}
+.continue-btn:hover { transform: translateY(-2px); }
+
+/* Progress Ring SVG */
+.progress-circle-wrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.progress-ring { transform: rotate(-90deg); }
+.progress-text {
+  position: absolute;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Desktop Overrides */
+@media (min-width: 1024px) {
+  .app-header {
+    border-radius: 0;
+    padding: 1.5rem 3rem;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: none;
+  }
+
+  .header-bg-pattern, .header-deco-circle { display: none; }
+
+  .header-top { 
+    margin-bottom: 0; 
+    width: 100%; 
+    align-items: center;
+    flex-wrap: nowrap;
+  }
+
+  .header-logo {
+    order: 1; /* PC: 첫 번째 */
+  }
+
+  .header-logo svg {
+    height: 36px;
+    color: var(--text-primary);
+  }
+
+  /* ✨ PC 라이트모드: 로고 마크 가로선 원래 색상 */
+  .logo-mark-line {
+    fill: #1E1B4B;
+  }
+
+  /* ✨ PC 다크모드: 로고 마크 가로선 하얀색 */
+  [data-theme="dark"] .logo-mark-line {
+    fill: white;
+  }
+
+  .header-text {
+    flex: 1;
+    min-width: auto;
+    margin-top: 0;
+    order: 2; /* PC: 두 번째 (로고 다음) */
+  }
+
+  .header-actions {
+    order: 3; /* PC: 세 번째 (맨 오른쪽) */
+  }
+
+  .app-logo-text { 
+    font-size: 1.5rem; 
+    color: var(--accent-primary); 
+  }
+
+  [data-theme="dark"] .app-logo-text { 
+    color: var(--text-primary); 
+  }
+
+  .sub-title { display: none; }
+  .progress-summary-card { display: none; }
+
+  .header-actions .icon-btn {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: none;
+  }
+  .header-actions .icon-btn:hover {
+    background: var(--bg-outer);
+    color: var(--accent-primary);
+  }
+}

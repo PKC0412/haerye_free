@@ -1,0 +1,69 @@
+/* =========================================
+   Mobile First Layout (Default)
+   ========================================= */
+
+.pc-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-color: var(--bg-outer);
+}
+
+.app-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Main Content Area */
+.app-main {
+  flex: 1;
+  padding: 2rem 1.5rem 6rem; /* Bottom padding for mobile nav */
+  overflow-y: auto;
+}
+
+/* =========================================
+   DESKTOP RESPONSIVE LAYOUT (>= 1024px)
+   ========================================= */
+
+@media (min-width: 1024px) {
+  body {
+    background-color: var(--bg-outer);
+    align-items: center; /* Center vertically on PC */
+  }
+
+  .pc-wrapper {
+    padding: 2rem;
+    height: 100vh;
+    box-sizing: border-box;
+    align-items: center;
+  }
+
+  /* Dashboard Grid Layout */
+  .app-container {
+    max-width: 1400px;
+    height: 90vh;      /* Fixed height for dashboard feel */
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 260px 1fr; /* Sidebar | Content */
+    grid-template-rows: auto 1fr;     /* Header | Content */
+    grid-template-areas: 
+      "sidebar header"
+      "sidebar main";
+    border-radius: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  .app-main {
+    grid-area: main;
+    padding: 3rem;
+    padding-bottom: 3rem; /* Reset bottom padding */
+    background-color: var(--bg-primary);
+    overflow-y: auto;
+  }
+}

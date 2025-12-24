@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "categoryId": "conditionals",
+  "translations": {
+    "conditionals_myeon_basic_1": {
+      "translation": "下雨的话，我会打伞。"
+    },
+    "conditionals_myeon_basic_2": {
+      "translation": "如果有时间的话，一起吃午饭吧。"
+    },
+    "conditionals_myeon_basic_3": {
+      "translation": "如果早回家的话，我会看电影。"
+    },
+    "conditionals_myeon_basic_4": {
+      "translation": "如果天气好的话，我会去散步。"
+    },
+    "conditionals_myeon_basic_5": {
+      "translation": "如果忙的话，那就明天做。"
+    },
+    "conditionals_tomyeon_future_1": {
+      "translation": "如果攒够钱的话，我会去旅行。"
+    },
+    "conditionals_tomyeon_future_2": {
+      "translation": "如果运动的话，身体会变得更健康。"
+    },
+    "conditionals_tomyeon_future_3": {
+      "translation": "如果努力学习的话，成绩会提高的。"
+    },
+    "conditionals_tomyeon_future_4": {
+      "translation": "如果早睡的话，明天会更清醒。"
+    },
+    "conditionals_tomyeon_future_5": {
+      "translation": "如果走很多路的话，会很累。"
+    }
+  }
+}

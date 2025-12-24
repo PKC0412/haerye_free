@@ -1,0 +1,53 @@
+:root {
+  /* Korean Traditional Theme: Jjok (Indigo) & Taegeuk (Red/Blue/Yellow) */
+
+  /* Base Colors */
+  --bg-outer: #e5e7eb;      
+  --bg-primary: #F8F5EC;    /* Hanji (Paper) */
+  --bg-secondary: #ffffff;  
+  --bg-tertiary: #f0f4f9;
+  --bg-card: #ffffff;       /* 카드 배경 (추가) */
+
+  /* Text Colors */
+  --text-primary: #1A1A1A;  /* Meok (Ink) */
+  --text-secondary: #4B5563;
+  --text-tertiary: #9CA3AF; 
+
+  /* Brand Colors (Jjok - Indigo) */
+  --accent-primary: #355588;   /* Main Indigo */
+  --accent-secondary: #2d456e; 
+  --accent-tertiary: #476da6;  
+
+  /* Taegeuk Accents */
+  --color-red: #D93838;   /* Taegeuk Red (More Vivid) */
+  --color-blue: #285078;  /* Taegeuk Blue */
+  --color-yellow: #D9A62E;
+
+  /* Border Colors */
+  --border-color: #e0e0e0;
+  --border-light: #f0f0f0;
+
+  /* Shadows & Effects */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-card: 0 4px 20px -2px rgba(53, 85, 136, 0.08);
+  --shadow-lg: 0 10px 30px -10px rgba(53, 85, 136, 0.15);
+  --shadow-glow-red: 0 0 15px rgba(217, 56, 56, 0.3);
+
+  --transition-duration: 0.3s;
+}
+
+[data-theme="dark"] {
+  --bg-outer: #111827;
+  --bg-primary: #1A202C;
+  --bg-secondary: #2D3748;
+  --bg-tertiary: #4A5568;
+  --bg-card: #2D3748;       /* 카드 배경 (추가) */
+  --text-primary: #F8F5EC;
+  --text-secondary: #CBD5E0;
+  --text-tertiary: #A0AEC0;
+  --accent-primary: #668cbd;
+  --accent-secondary: #476da6;
+  --border-color: #444;
+  --border-light: #444;
+  --shadow-card: 0 4px 8px rgba(0, 0, 0, 0.4);
+}

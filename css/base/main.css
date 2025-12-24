@@ -1,0 +1,224 @@
+/* Reset & Base Styles */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Noto Sans KR", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  /* Scroll behavior */
+  scroll-behavior: smooth;
+}
+
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; }
+
+/* Dashboard Section Title */
+.section-title-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  border-left: 5px solid var(--accent-primary);
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.level-badge {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color, #e2e8f0);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.level-badge .dot { width: 8px; height: 8px; border-radius: 50%; }
+.level-badge .dot.red { background-color: var(--color-red); }
+
+/* Menu Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.menu-card {
+  background: var(--bg-secondary);
+  border: 1px solid transparent;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.menu-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+/* Card Icon Wrapper */
+.card-icon-wrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: "Noto Serif KR", serif;
+  font-weight: 700;
+}
+
+.card-title { font-size: 1rem; font-weight: 700; margin: 0 0 0.25rem; color: var(--text-primary); }
+.card-desc { font-size: 0.75rem; color: var(--text-tertiary); margin: 0; }
+
+/* Card Themes - Dark Mode Opacity Adjusted (0.1 -> 0.25) */
+.card-red { border-top: 4px solid var(--color-red); }
+.card-red .card-icon-wrapper { background: #FEF2F2; color: var(--color-red); }
+[data-theme="dark"] .card-red .card-icon-wrapper { background: rgba(217, 56, 56, 0.5); color: #ffadad; }
+
+.card-blue { border-top: 4px solid var(--color-blue); }
+.card-blue .card-icon-wrapper { background: #EFF6FF; color: var(--color-blue); }
+[data-theme="dark"] .card-blue .card-icon-wrapper { background: rgba(40, 80, 120, 0.5); color: #abc9ff; }
+
+.card-yellow { border-top: 4px solid var(--color-yellow); }
+.card-yellow .card-icon-wrapper { background: #FFFBEB; color: var(--color-yellow); }
+[data-theme="dark"] .card-yellow .card-icon-wrapper { background: rgba(217, 166, 46, 0.5); color: #ffe685; }
+
+.card-indigo { border-top: 4px solid var(--accent-primary); }
+.card-indigo .card-icon-wrapper { background: #EEF2FF; color: var(--accent-primary); }
+[data-theme="dark"] .card-indigo .card-icon-wrapper { background: rgba(53, 85, 136, 0.5); color: #b3cde0; }
+
+/* Wide Card (Recommended Lesson) */
+.wide-card {
+  background: var(--bg-secondary);
+  border-radius: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+.wide-card:hover { transform: translateY(-3px); }
+
+.wide-card-bg-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(201,60,60,0.03), rgba(47,93,140,0.03));
+}
+.tag { font-size: 0.65rem; padding: 2px 6px; border-radius: 4px; font-weight: 800; margin-right: 0.5rem; }
+.tag.new { background: var(--color-red); color: white; }
+.tag.topic { background: #EEF2FF; color: var(--accent-primary); }
+[data-theme="dark"] .tag.topic { background: rgba(53, 85, 136, 0.5); color: #b3cde0; }
+
+.wide-card-title { font-size: 1.1rem; font-weight: 700; margin: 0.5rem 0 0.25rem; color: var(--text-primary); }
+.wide-card-desc { font-size: 0.85rem; color: var(--text-secondary); margin: 0; }
+.wide-card-icon { font-size: 1.5rem; color: var(--text-tertiary); }
+
+/* Content Section Containers (Common) */
+.content-section {
+  display: none; /* Hidden by default */
+  animation: fadeIn 0.3s ease-out;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--border-color, #e5e7eb);
+  padding-bottom: 1rem;
+}
+
+.section-header h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  margin: 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-tertiary);
+  transition: color 0.2s;
+}
+.close-btn:hover { color: var(--color-red); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Desktop Adjustments for Menu Grid */
+@media (min-width: 1024px) {
+  .section-title { font-size: 1.8rem; margin-bottom: 2rem; }
+
+  .menu-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 Columns on PC */
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  .menu-card {
+    padding: 2rem;
+    aspect-ratio: 1/1; /* Square cards */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid var(--border-color, #e5e7eb);
+  }
+  .menu-card:hover { transform: translateY(-8px); }
+
+  .card-icon-wrapper {
+    width: 4rem;
+    height: 4rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .card-title { font-size: 1.2rem; }
+  .card-desc { font-size: 0.9rem; }
+
+  .wide-card {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+  }
+  .wide-card-title { font-size: 1.4rem; }
+
+  /* Content Sections Style on PC */
+  .content-section {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color, #e5e7eb);
+    min-height: 100%;
+  }
+}

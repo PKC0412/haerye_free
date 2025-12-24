@@ -1,0 +1,79 @@
+/* Recommendation Grid Styles (개인화 추천 카드) */
+
+.recommend-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.recommend-card {
+  background: linear-gradient(135deg, var(--bg-secondary), var(--bg-tertiary));
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all var(--transition-duration) ease;
+}
+
+.recommend-card:hover {
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.recommend-pill {
+  display: inline-block;
+  background-color: var(--accent-primary);
+  color: white;
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+.recommend-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0.25rem 0 0 0;
+}
+
+.recommend-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0.25rem 0 0.75rem 0;
+  flex: 1;
+}
+
+.recommend-btn {
+  background-color: var(--accent-primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-duration) ease;
+  align-self: flex-start;
+}
+
+.recommend-btn:hover {
+  background-color: var(--accent-secondary);
+  transform: translateY(-2px);
+}
+
+.recommend-btn:active {
+  transform: scale(0.98);
+}
+
+/* Responsive - Recommend */
+@media (max-width: 1024px) {
+  .recommend-grid {
+    grid-template-columns: 1fr;
+  }
+}

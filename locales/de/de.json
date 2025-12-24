@@ -1,0 +1,244 @@
+{
+  "menu": {
+    "hangul": "Hangeul lernen",
+    "vocabulary": "Wortschatz",
+    "flashcard": "Lernkarten",
+    "grammar": "Grammatik",
+    "help": "Hilfe",
+    "stats": "Lernstatistik"
+  },
+  "home": {
+    "menu": {
+      "study_menu_title": "Lernmenü",
+      "hangul_desc": "Grundvokale & Konsonanten",
+      "vocab_desc": "Grundwortschatz",
+      "flashcard_desc": "Wiederholung",
+      "grammar_desc": "Satzstruktur"
+    },
+    "wide_card": {
+      "new": "NEU",
+      "topic": "Alltagskonversation",
+      "title": "Grundbegrüßungen lernen",
+      "desc": "Beginne mit Begrüßungen!"
+    },
+    "logo_subtitle": "Los geht’s mit Koreanisch."
+  },
+  "nav": {
+    "home": "Start",
+    "learn": "Lernen",
+    "stats": "Statistik",
+    "settings": "Einst.",
+    "goal": "Tagesziel",
+    "streak": "Serie",
+    "day_suffix": " Tage",
+    "continue": "Weiter"
+  },
+  "goal": {
+    "modal_title": "Herzlichen Glückwunsch!",
+    "modal_desc": "Sie haben Ihr Tagesziel erreicht!",
+    "confirm": "Großartig!"
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "voice_title": "Spracheinstellungen (TTS)",
+    "rate": "Geschwindigkeit",
+    "pitch": "Tonhöhe",
+    "volume": "Lautstärke",
+    "voice_select_title": "Stimmenauswahl",
+    "voice_label": "Stimme",
+    "default_voice": "Standard (System)",
+    "accessibility_title": "Barrierefreiheit",
+    "auto_read": "Autom. Lesen bei Klick",
+    "reset": "Zurücksetzen",
+    "data_title": "Lerndaten",
+    "data_warning": "⚠️ Ihr Tagesziel, Ihre Statistiken und Ihre Lernhistorie werden vollständig gelöscht.",
+    "data_reset": "🗑️ Lerndaten zurücksetzen",
+    "reset_confirm": "⚠️ Möchten Sie wirklich alle Lerndaten zurücksetzen?",
+    "data_reset_confirm": "⚠️ Alle Lernverläufe werden gelöscht. Möchten Sie wirklich fortfahren?"
+  },
+  "language": {
+    "modalTitle": "Sprache",
+    "modalDescription": "Wählen Sie Ihre bevorzugte Sprache für die Benutzeroberfläche. Sie können dies jederzeit ändern.",
+    "names": {
+      "en": "English",
+      "zh": "简体中文",
+      "ja": "日本語",
+      "ru": "Русский",
+      "es": "Español",
+      "fr": "Français",
+      "it": "Italiano",
+      "de": "Deutsch",
+      "th": "ไทย",
+      "pt": "Português",
+      "nl": "Nederlands"
+    }
+  },
+  "help": {
+    "header": "Ersteller & Kontakt",
+    "description": "Wenn Sie Fragen, Fehlerberichte oder Vorschläge haben, kontaktieren Sie uns bitte über die unten stehenden Kanäle.",
+    "creatorLabel": "Ersteller:"
+  },
+  "vocab": {
+    "play": "Audio abspielen"
+  },
+  "grammar": {
+    "hear": "Anhören"
+  },
+  "common": {
+    "listen": "Anhören",
+    "example": "Beispiel",
+    "romanization": "Romanisierung",
+    "nodata": "Keine Daten verfügbar.",
+    "confirm": "Bestätigen",
+    "cancel": "Abbrechen"
+  },
+  "flashcard": {
+    "empty": "Keine Wörter zum Lernen verfügbar.",
+    "session": {
+      "summary": "Sitzung: {current} von {total} Wörtern",
+      "shuffled": "Gemischt",
+      "sequential": "Sequenziell"
+    },
+    "total_words": "Gesamtwörter",
+    "controls": {
+      "hear": "Anhören",
+      "know": "Ich weiß es",
+      "dontKnow": "Nochmal lernen"
+    },
+    "progress": {
+      "label": "Fortschritt: {done} / {total}"
+    },
+    "hint": {
+      "reveal": "Karte antippen, um Bedeutung zu zeigen",
+      "romanizationLabel": "Romanisierung:"
+    },
+    "result": {
+      "title": "Gut gemacht!",
+      "completed": "Sie haben {total} Wörter gelernt.",
+      "accuracy": "Genauigkeit: {accuracy}%",
+      "stats": "Gewusst: {known} | Wiederholen: {unknown}",
+      "restart": "Mischen & Neustart"
+    }
+  },
+  "category": {
+    "all": "Alle",
+    "greetings": "Begrüßung",
+    "basic": "Grundlagen",
+    "food": "Essen",
+    "people": "Menschen",
+    "places": "Orte",
+    "transportation": "Verkehr",
+    "verbs_daily": "Alltagsverben",
+    "verbs_actions": "Handlungsverben",
+    "adjectives": "Adjektive",
+    "numbers": "Zahlen",
+    "time": "Zeit/Datum",
+    "colors": "Farben",
+    "body": "Körper",
+    "nature": "Natur",
+    "school": "Schule"
+  },
+  "발음 듣기": "Anhören",
+  "자음": "Konsonanten",
+  "모음": "Vokale",
+  "받침": "Endkonsonanten (Batchim)",
+  "로마자 표기:": "Romanisierung:",
+  "이전": "Zurück",
+  "다음": "Weiter",
+  "설명:": "Beschreibung:",
+  "예시:": "Beispiel:",
+  "설명이 아직 준비되지 않았습니다.": "Beschreibung noch nicht verfügbar.",
+  "예시가 아직 준비되지 않았습니다.": "Beispiel noch nicht verfügbar.",
+  "예문": "Beispielsatz",
+  "grammar_category_sentence_structure": "Satzbau",
+  "grammar_category_particles": "Partikel",
+  "grammar_category_tenses": "Zeitformen",
+  "grammar_category_negation": "Verneinung",
+  "grammar_category_connectives": "Verbindungen",
+  "grammar_category_comparison": "Vergleich",
+  "grammar_category_ending": "Satzendungen",
+  "grammar_category_aux_verbs": "Hilfsverben",
+  "grammar_category_voice": "Stimme (Passiv & Kausativ)",
+  "grammar_category_conditionals": "Konditionalsätze",
+  "grammar_category_quotations": "Zitate",
+  "grammar_group_sentence_structure_basic_order": "Grundwortstellung (SOV)",
+  "grammar_group_sentence_structure_elements": "Satzglieder",
+  "grammar_group_sentence_structure_types": "Satzarten",
+  "grammar_group_particles_case": "Kasuspartikel",
+  "grammar_group_particles_auxiliary": "Hilfspartikel",
+  "grammar_group_particles_conjunctive": "Verbindungspartikel",
+  "grammar_group_tenses_present": "Gegenwart",
+  "grammar_group_tenses_past": "Vergangenheit",
+  "grammar_group_tenses_future": "Zukunft",
+  "grammar_group_tenses_progressive": "Verlaufsform (-고 있어요)",
+  "grammar_group_tenses_experiential": "Erfahrung (-아/어 본 적이 있다)",
+  "grammar_group_negation_an": "Verneinung mit 안",
+  "grammar_group_negation_mot": "Verneinung mit 못",
+  "grammar_group_negation_ji_anhda": "Verneinung mit -지 않다",
+  "grammar_group_negation_ji_mothada": "Verneinung mit -지 못하다",
+  "grammar_group_connectives_go": "Verbindung -고",
+  "grammar_group_connectives_aseo_eoseo": "Verbindung -아서/어서",
+  "grammar_group_connectives_jiman": "Verbindung -지만",
+  "grammar_group_connectives_myeonseo": "Verbindung -면서",
+  "grammar_group_connectives_geona": "Verbindung -거나",
+  "grammar_group_comparison_boda": "Vergleich mit 보다",
+  "grammar_group_comparison_mankeum": "Vergleich mit 만큼",
+  "grammar_group_comparison_cheoreom": "Vergleich mit 처럼",
+  "grammar_group_ending_polite_ayo_eoyo": "Höfliche Endung -아요/어요",
+  "grammar_group_ending_formal_sumnida": "Formelle Endung -습니다/-습니까",
+  "grammar_group_aux_verbs_want_gosipda": "Hilfsverb -고 싶다",
+  "grammar_group_aux_verbs_try_boda": "Hilfsverb -아/어 보다",
+  "grammar_group_aux_verbs_must_eya_hada": "Hilfsverb -아/어야 하다",
+  "grammar_group_voice_passive_ajida": "Passiv -아/어지다",
+  "grammar_group_voice_causative_gehada": "Kausativ -게 하다",
+  "grammar_group_conditionals_myeon_basic": "Konditional -(으)면",
+  "grammar_group_conditionals_tomyeon_future": "Konditional -(으)면 (Zukunft/Wiederholung)",
+  "grammar_group_quotations_declare_dago": "Zitate mit -다고 하다",
+  "grammar_group_quotations_say_lago": "Zitate mit -라고 하다",
+  "ttsWarning": {
+    "modalTitle": "Keine koreanische Stimme verfügbar",
+    "modalDescription": "Ihr Browser oder Gerät stellt derzeit keine koreanische Text-to-Speech-Stimme (TTS) bereit. Sie können die Inhalte weiterhin lernen, aber die Aussprachewiedergabe funktioniert möglicherweise nicht richtig oder verwendet eine Stimme in einer anderen Sprache."
+  },
+  "stats": {
+    "mastery_title": "Wortbeherrschungsanalyse",
+    "mastery_desc": "Zeigt deine Wortfertigkeit basierend auf dem Lernen mit Lernkarten.",
+    "known_words": "Geschätzte Bekannte Wörter",
+    "mastery_good": "Starke Wörter",
+    "mastery_normal": "Mittlere Wörter",
+    "mastery_bad": "Herausfordernde Wörter",
+    "recent_wrong_title": "Häufig Falsch Beantwortete Wörter (Letzte 7 Tage)",
+    "recent_wrong_empty": "Keine häufig falsch beantworteten Wörter in den letzten 7 Tagen.",
+    "word_detail_badge": "Wortfortschritt-Details",
+    "word_detail_empty": "Noch keine Wortdaten aufgezeichnet. Versuche zuerst mit Lernkarten zu lernen.",
+    "grammar_heatmap_title": "Grammatikverständnis-Heatmap",
+    "grammar_heatmap_desc": "Eine visuelle Übersicht, wie oft du jede Grammatikkategorie überprüft hast.",
+    "legend_good": "Stark",
+    "legend_mid": "Durchschnittlich",
+    "legend_bad": "Schwach",
+    "next_learning": "Deine Personalisierten Nächsten Schritte",
+    "today_recommend": "Heutige Empfehlung",
+    "vocab_recommend": "Wortschatz-Empfehlung",
+    "grammar_recommend": "Grammatik-Empfehlung",
+    "quick_access": "Schnellzugriff",
+    "continue_today_title": "Weiterlernen heute",
+    "continue_today_desc": "Fast geschafft! Lass uns stark abschließen.",
+    "review_words_title": "Tricky Wörter wiederholen",
+    "review_words_desc": "Einige Wörter waren zuletzt etwas knifflig. Wiederholen wir sie mit Lernkarten.",
+    "grammar_focus_prefix": "Grammatik - ",
+    "grammar_focus_suffix": " Übung",
+    "grammar_focus_desc": "Dieser Grammatikbereich könnte etwas mehr Übung gebrauchen. Schauen wir uns ein paar Beispiele an!",
+    "today_goal": "Heutiges Ziel Erreicht",
+    "helper_today": "Zeigt, wie viel von deinem heutigen Lernziel du abgeschlossen hast.",
+    "streak_title": "Lernserie",
+    "day_suffix": "Tage",
+    "last_study": "Letztes Lerndatum",
+    "no_study": "Kein Eintrag",
+    "by_category": "Fortschritt nach Kategorie"
+  },
+  "statsTrend": {
+    "title": "📊 Wöchentlicher Lerntrend",
+    "subtitle": "Dein Lernfortschritt diese Woche (Mo–So)",
+    "empty": "Noch keine wöchentlichen Studiendaten zum Anzeigen.",
+    "loading": "Lade deine Lerndaten..."
+  }
+}
