@@ -1,20 +1,4 @@
 User-agent: *
 Allow: /
 
-# AI 검색 요약·인용은 허용
-User-agent: Google-Extended
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: meta-externalagent
-Allow: /
-
-# 학습용 크롤링은 명시적으로 거부
-Content-signal: search=yes, ai-train=yes
-
 Sitemap: https://www.haerye.com/sitemap.xml

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#355588">
+    <meta name="description" content="해례 (Haerye) - Korean Learning PWA">
+    <meta name="description" content="Best free way to learn Korean for beginners on Haerye, a zero-install web app site. Master Hangul and grammar in 11 languages. Start learning on the web now!">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Haerye | Best Free Korean Learning Web App for Beginners">
+    <meta property="og:description" content="Experience the best free way to learn Korean for beginners on a dedicated web platform. No install needed. Supporting 11 languages from Hangul to grammar.">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Haerye">
+	<!-- SEO -->
+	<!-- Clarity tracking code for https://www.haerye.com/ -->
+<script>
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "unv1hd514q");
+</script>
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-SR0XC77BE9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-SR0XC77BE9');
+</script>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>해례 (Haerye)</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/layout.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/sidebar.css">
+    <link rel="stylesheet" href="css/base/main.css">
+    <link rel="stylesheet" href="css/pages/stats-trend.css">
+    <link rel="stylesheet" href="css/pages/stats.css">
+	<link rel="stylesheet" href="css/pages/stats-mastery.css">
+	<link rel="stylesheet" href="css/pages/stats-grammar-heat.css">
+	<link rel="stylesheet" href="css/pages/stats-recommend.css">
+    <link rel="stylesheet" href="css/components/components.base.css">
+    <link rel="stylesheet" href="css/components/components.sections.css">
+    <link rel="stylesheet" href="css/components/components.modals.css">
+    <link rel="stylesheet" href="css/components/components.language-modal.css">
+    <link rel="stylesheet" href="css/components/components.settings.css">
+    <link rel="stylesheet" href="css/pages/grammar.css">
+    <link rel="stylesheet" href="css/pages/home-main.css">
+</head>
+<body>
+    <div class="pc-wrapper">
+        <div class="app-container">
+            <!-- Header -->
+            <div id="header-container" style="min-height: 80px;"></div>
+
+            <main class="app-main">
+                <!-- ★ 신규: 홈 메인 섹션 추가 ★ -->
+                <section id="home-main-section" class="content-section" style="display: none;">
+                    <!-- JavaScript로 동적 렌더링됨 (HomeMainRenderer) -->
+                </section>
+
+                <!-- ★ 신규: 학습 메뉴 컨테이너 추가 ★ -->
+                <div id="learn-container" class="content-section" style="display: none;">
+                    <!-- JavaScript로 동적 렌더링됨 (LearnRenderer) -->
+                </div>
+
+                <!-- Home Dashboard -->
+                <div id="home-container" style="min-height: 200px;">
+                    <!-- Fallback Content -->
+                    <div style="text-align: center; padding: 2rem; color: #999;">
+                        <div class="loading"></div> Loading...
+                    </div>
+                </div>
+
+                <!-- Content Sections -->
+                <section id="hangul-section" class="content-section" style="display: none;">
+                    <div class="section-header">
+                        <h2 data-i18n="menu.hangul">한글 배우기</h2>
+                        <button class="close-btn" onclick="showWelcome()">✖</button>
+                    </div>
+                    <div id="hangul-container" class="hangul-container"></div>
+                </section>
+
+                <section id="vocabulary-section" class="content-section" style="display: none;">
+                    <div class="section-header">
+                        <h2 data-i18n="menu.vocabulary">단어장</h2>
+                        <button class="close-btn" onclick="showWelcome()">✖</button>
+                    </div>
+                    <div id="vocabulary-container" class="vocabulary-container"></div>
+                </section>
+
+                <section id="flashcard-section" class="content-section" style="display: none;">
+                    <div class="section-header">
+                        <h2 data-i18n="menu.flashcard">플래시카드</h2>
+                        <button class="close-btn" onclick="showWelcome()">✖</button>
+                    </div>
+                    <div id="flashcard-container" class="flashcard-container"></div>
+                </section>
+
+                <section id="grammar-section" class="content-section" style="display: none;">
+                    <div class="section-header">
+                        <h2 data-i18n="menu.grammar">문법</h2>
+                        <button class="close-btn" onclick="showWelcome()">✖</button>
+                    </div>
+                    <div id="grammar-container" class="grammar-container"></div>
+                </section>
+
+                <section class="welcome-section" style="display: none;"></section>
+            </main>
+
+            <!-- Navigation -->
+            <div id="nav-container"></div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-container"></div>
+
+    <!-- Scripts -->
+    <script src="config.js"></script>
+    <script src="i18n.js"></script>
+    <script src="js/core/theme.js"></script>
+    <script src="js/features/speech.js"></script>
+    <script src="js/core/settings.js"></script> <!-- Settings 먼저 로드 -->
+    <script src="js/core/date-utils.js"></script>
+    <script src="js/core/learning-progress.model.js"></script>
+    <script src="js/core/learning-progress.storage.js"></script>
+    <script src="js/core/learning-progress.runtime.js"></script>
+    <script src="js/core/stats-log-manager.js"></script>
+    <script src="js/core/app.js"></script>
+
+    <!-- Renderers -->
+    <script src="js/renderers/header-renderer.flags.js"></script>
+    <script src="js/renderers/header-renderer.view.js"></script>
+    <script src="js/renderers/header-renderer.progress.js"></script>
+    <script src="js/renderers/nav-renderer.js"></script>
+    <script src="js/renderers/home-renderer.js"></script>
+    <!-- ★ 신규: 홈 메인 렌더러 추가 ★ -->
+    <script src="js/renderers/home-main-renderer.js"></script>
+    <script src="js/renderers/learn-renderer.js"></script>
+    <script src="js/renderers/modal-renderer.js"></script>
+
+    <!-- Logic Modules -->
+    <script src="js/features/hangul-learning.js"></script>
+    <script src="js/features/vocabulary-learning.js"></script>
+    <script src="js/features/grammar-data.js"></script>
+    <script src="js/features/grammar-view.js"></script>
+    <script src="js/features/grammar-ui.js"></script>
+    <script src="js/features/flashcard.js"></script>
+
+    <!-- Managers (New) -->
+    <script src="js/core/language-manager.js"></script>
+
+    <!-- Modal System (Refactored) -->
+    <script src="js/features/modal-interaction.js"></script>
+    <script src="js/features/modal-settings-logic.js"></script>
+    <script src="js/features/modal-manager.js"></script>
+
+    <!-- Controller (Main) -->
+    <script src="js/core/ui-manager.js"></script>
+
+    <!-- Scroll to Top Button (독립적) -->
+    <script src="js/features/scroll-button.js"></script>
+</body>
+</html>
