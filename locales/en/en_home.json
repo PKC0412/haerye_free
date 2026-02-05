@@ -63,8 +63,8 @@
     "content_comparison": {
       "title": "Free vs Pro Feature Comparison",
       "intro": "Haerye’s free version is enough for solid learning. ✨ If you want deeper analytics and advanced study features, consider the PRO version!",
-      "footer_note": "PRO version coming soon. (Estimated price: monthly / $6.99–$7.99)",
-      "btn_upgrade": "Before PRO launches"
+      "footer_note": "PRO version coming soon. (price: monthly / $7.99)",
+      "btn_upgrade": "PRO launches"
     },
     "comparison": {
       "th_feature": "Feature",
