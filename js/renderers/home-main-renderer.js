@@ -329,12 +329,12 @@ renderComparisonTab() {
             <div class="comparison-footer">
                 <div class="license-badge">
                     <span class="badge-icon">🎁</span>
-                    <span class="badge-text" data-i18n="home.content_comparison.footer_note">PRO 버전 출시 예정. (예상가: 월 단위 / $6.99 ~ $7.99)</span>
+                    <span class="badge-text" data-i18n="home.content_comparison.footer_note">PRO 버전 출시. (가격: 월 단위 / $7.99)</span>
                 </div>
-                <button class="btn-upgrade-pro">
+                <a href="https://app.haerye.com/" target="_blank" class="btn-upgrade-pro" style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;">
                     <span class="btn-icon">⭐</span>
-                    <span data-i18n="home.content_comparison.btn_upgrade">PRO 버전 출시 전</span>
-                </button>
+                    <span data-i18n="home.content_comparison.btn_upgrade">PRO 버전 출시!!</span>
+                </a>
             </div>
         </div>
     `;
