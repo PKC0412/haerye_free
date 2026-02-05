@@ -1,175 +1,328 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta name="robots" content="index, follow">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#355588">
-    <meta name="description" content="해례 (Haerye) - Korean Learning PWA">
-    <meta name="description" content="Best free way to learn Korean for beginners on Haerye, a zero-install web app site. Master Hangul and grammar in 11 languages. Start learning on the web now!">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Haerye | Best Free Korean Learning Web App for Beginners">
-    <meta property="og:description" content="Experience the best free way to learn Korean for beginners on a dedicated web platform. No install needed. Supporting 11 languages from Hangul to grammar.">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-title" content="Haerye">
-	<!-- SEO -->
-	<!-- Clarity tracking code for https://www.haerye.com/ -->
-<script>
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "unv1hd514q");
-</script>
-	<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SR0XC77BE9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <title>해례 Haerye - 한글 배우기</title>
 
-  gtag('config', 'G-SR0XC77BE9');
-</script>
-    <link rel="manifest" href="manifest.webmanifest">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <title>해례 (Haerye)</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700;900&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <style>
+        /* 기본 스타일 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/base/variables.css">
-    <link rel="stylesheet" href="css/base/layout.css">
-    <link rel="stylesheet" href="css/components/header.css">
-    <link rel="stylesheet" href="css/components/sidebar.css">
-    <link rel="stylesheet" href="css/base/main.css">
-    <link rel="stylesheet" href="css/pages/stats-trend.css">
-    <link rel="stylesheet" href="css/pages/stats.css">
-	<link rel="stylesheet" href="css/pages/stats-mastery.css">
-	<link rel="stylesheet" href="css/pages/stats-grammar-heat.css">
-	<link rel="stylesheet" href="css/pages/stats-recommend.css">
-    <link rel="stylesheet" href="css/components/components.base.css">
-    <link rel="stylesheet" href="css/components/components.sections.css">
-    <link rel="stylesheet" href="css/components/components.modals.css">
-    <link rel="stylesheet" href="css/components/components.language-modal.css">
-    <link rel="stylesheet" href="css/components/components.settings.css">
-    <link rel="stylesheet" href="css/pages/grammar.css">
-    <link rel="stylesheet" href="css/pages/home-main.css">
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* 🔥 프로모션 모달 스타일 */
+        .promo-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 99999;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .promo-modal.active {
+            display: flex;
+        }
+
+        .promo-modal-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 40px 30px;
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s ease-out;
+            text-align: center;
+        }
+
+        .promo-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            font-size: 24px;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .promo-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .promo-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .promo-title {
+            font-size: 26px;
+            font-weight: 700;
+            margin: 0 0 15px;
+            line-height: 1.3;
+        }
+
+        .promo-subtitle {
+            font-size: 18px;
+            margin: 0 0 20px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .promo-highlight {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .promo-discount {
+            font-size: 42px;
+            font-weight: 800;
+            margin: 0 0 8px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .promo-code-label {
+            font-size: 14px;
+            opacity: 0.9;
+            margin: 0 0 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .promo-code {
+            font-size: 24px;
+            font-weight: 700;
+            font-family: 'Courier New', monospace;
+            background: rgba(255, 255, 255, 0.3);
+            padding: 8px 20px;
+            border-radius: 8px;
+            display: inline-block;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .promo-code:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        .promo-cta {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 40px;
+            background: white;
+            color: #667eea;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .promo-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .promo-note {
+            font-size: 13px;
+            margin-top: 20px;
+            opacity: 0.85;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 600px) {
+            .promo-modal-content {
+                padding: 30px 20px;
+            }
+            .promo-title {
+                font-size: 22px;
+            }
+            .promo-discount {
+                font-size: 36px;
+            }
+            .promo-code {
+                font-size: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <div class="pc-wrapper">
-        <div class="app-container">
-            <!-- Header -->
-            <div id="header-container" style="min-height: 80px;"></div>
+    <!-- 메인 앱 컨테이너 -->
+    <div id="app">
+        <div class="loading">Loading...</div>
+    </div>
 
-            <main class="app-main">
-                <!-- ★ 신규: 홈 메인 섹션 추가 ★ -->
-                <section id="home-main-section" class="content-section" style="display: none;">
-                    <!-- JavaScript로 동적 렌더링됨 (HomeMainRenderer) -->
-                </section>
+    <!-- 한글 배우기 섹션 (기존 콘텐츠) -->
+    <!-- 단어장 섹션 -->
+    <!-- 플래시카드 섹션 -->
+    <!-- 문법 섹션 -->
 
-                <!-- ★ 신규: 학습 메뉴 컨테이너 추가 ★ -->
-                <div id="learn-container" class="content-section" style="display: none;">
-                    <!-- JavaScript로 동적 렌더링됨 (LearnRenderer) -->
+    <!-- 🔥 프로모션 모달 -->
+    <div id="promoModal" class="promo-modal">
+        <div class="promo-modal-content">
+            <button class="promo-close" onclick="closePromoModal()">✖</button>
+
+            <div class="promo-icon">🎉</div>
+
+            <h2 class="promo-title">
+                해례 Haerye Pro Launch Event!
+            </h2>
+
+            <p class="promo-subtitle">
+                Get ready for premium features
+            </p>
+
+            <div class="promo-highlight">
+                <div class="promo-discount">30% OFF</div>
+                <p class="promo-code-label">Limited to first 30 subscribers</p>
+                <div class="promo-code" onclick="copyPromoCode()" title="Click to copy">
+                    IXNTA1OQ
                 </div>
+            </div>
 
-                <!-- Home Dashboard -->
-                <div id="home-container" style="min-height: 200px;">
-                    <!-- Fallback Content -->
-                    <div style="text-align: center; padding: 2rem; color: #999;">
-                        <div class="loading"></div> Loading...
-                    </div>
-                </div>
+            <a href="https://app.haerye.com/" class="promo-cta" target="_blank">
+                Get Haerye Pro →
+            </a>
 
-                <!-- Content Sections -->
-                <section id="hangul-section" class="content-section" style="display: none;">
-                    <div class="section-header">
-                        <h2 data-i18n="menu.hangul">한글 배우기</h2>
-                        <button class="close-btn" onclick="showWelcome()">✖</button>
-                    </div>
-                    <div id="hangul-container" class="hangul-container"></div>
-                </section>
-
-                <section id="vocabulary-section" class="content-section" style="display: none;">
-                    <div class="section-header">
-                        <h2 data-i18n="menu.vocabulary">단어장</h2>
-                        <button class="close-btn" onclick="showWelcome()">✖</button>
-                    </div>
-                    <div id="vocabulary-container" class="vocabulary-container"></div>
-                </section>
-
-                <section id="flashcard-section" class="content-section" style="display: none;">
-                    <div class="section-header">
-                        <h2 data-i18n="menu.flashcard">플래시카드</h2>
-                        <button class="close-btn" onclick="showWelcome()">✖</button>
-                    </div>
-                    <div id="flashcard-container" class="flashcard-container"></div>
-                </section>
-
-                <section id="grammar-section" class="content-section" style="display: none;">
-                    <div class="section-header">
-                        <h2 data-i18n="menu.grammar">문법</h2>
-                        <button class="close-btn" onclick="showWelcome()">✖</button>
-                    </div>
-                    <div id="grammar-container" class="grammar-container"></div>
-                </section>
-
-                <section class="welcome-section" style="display: none;"></section>
-            </main>
-
-            <!-- Navigation -->
-            <div id="nav-container"></div>
+            <p class="promo-note">
+                🔥 Don't miss out! Limited-time offer
+            </p>
         </div>
     </div>
 
-    <!-- Modals -->
-    <div id="modal-container"></div>
+    <!-- 🔥 프로모션 모달 스크립트 -->
+    <script>
+        // 세션당 1회만 모달 표시
+        (function() {
+            const PROMO_SHOWN_KEY = 'haerye_promo_shown';
+            const modal = document.getElementById('promoModal');
 
-    <!-- Scripts -->
-    <script src="config.js"></script>
-    <script src="i18n.js"></script>
-    <script src="js/core/theme.js"></script>
-    <script src="js/features/speech.js"></script>
-    <script src="js/core/settings.js"></script> <!-- Settings 먼저 로드 -->
-    <script src="js/core/date-utils.js"></script>
-    <script src="js/core/learning-progress.model.js"></script>
-    <script src="js/core/learning-progress.storage.js"></script>
-    <script src="js/core/learning-progress.runtime.js"></script>
-    <script src="js/core/stats-log-manager.js"></script>
-    <script src="js/core/app.js"></script>
+            // 이미 표시된 적이 있는지 확인
+            const wasShown = sessionStorage.getItem(PROMO_SHOWN_KEY);
 
-    <!-- Renderers -->
-    <script src="js/renderers/header-renderer.flags.js"></script>
-    <script src="js/renderers/header-renderer.view.js"></script>
-    <script src="js/renderers/header-renderer.progress.js"></script>
-    <script src="js/renderers/nav-renderer.js"></script>
-    <script src="js/renderers/home-renderer.js"></script>
-    <!-- ★ 신규: 홈 메인 렌더러 추가 ★ -->
-    <script src="js/renderers/home-main-renderer.js"></script>
-    <script src="js/renderers/learn-renderer.js"></script>
-    <script src="js/renderers/modal-renderer.js"></script>
+            if (!wasShown && modal) {
+                // 1.5초 후 모달 표시
+                setTimeout(function() {
+                    modal.classList.add('active');
+                    sessionStorage.setItem(PROMO_SHOWN_KEY, 'true');
+                }, 1500);
+            }
+        })();
 
-    <!-- Logic Modules -->
-    <script src="js/features/hangul-learning.js"></script>
-    <script src="js/features/vocabulary-learning.js"></script>
-    <script src="js/features/grammar-data.js"></script>
-    <script src="js/features/grammar-view.js"></script>
-    <script src="js/features/grammar-ui.js"></script>
-    <script src="js/features/flashcard.js"></script>
+        function closePromoModal() {
+            const modal = document.getElementById('promoModal');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+        }
 
-    <!-- Managers (New) -->
-    <script src="js/core/language-manager.js"></script>
+        function copyPromoCode() {
+            const code = 'IXNTA1OQ';
 
-    <!-- Modal System (Refactored) -->
-    <script src="js/features/modal-interaction.js"></script>
-    <script src="js/features/modal-settings-logic.js"></script>
-    <script src="js/features/modal-manager.js"></script>
+            // 최신 클립보드 API 사용
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(code).then(function() {
+                    showCopyFeedback();
+                }).catch(function() {
+                    fallbackCopy(code);
+                });
+            } else {
+                fallbackCopy(code);
+            }
+        }
 
-    <!-- Controller (Main) -->
-    <script src="js/core/ui-manager.js"></script>
+        function fallbackCopy(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            textarea.style.position = 'fixed';
+            textarea.style.opacity = '0';
+            document.body.appendChild(textarea);
+            textarea.select();
 
-    <!-- Scroll to Top Button (독립적) -->
-    <script src="js/features/scroll-button.js"></script>
+            try {
+                document.execCommand('copy');
+                showCopyFeedback();
+            } catch (err) {
+                console.error('Copy failed:', err);
+            }
+
+            document.body.removeChild(textarea);
+        }
+
+        function showCopyFeedback() {
+            const codeEl = document.querySelector('.promo-code');
+            if (codeEl) {
+                const originalText = codeEl.textContent;
+                codeEl.textContent = '✓ Copied!';
+                setTimeout(function() {
+                    codeEl.textContent = originalText;
+                }, 2000);
+            }
+        }
+
+        // 오버레이 클릭 시 닫기
+        document.getElementById('promoModal')?.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePromoModal();
+            }
+        });
+
+        // ESC 키로 닫기
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePromoModal();
+            }
+        });
+    </script>
+
+    <!-- 기존 앱 스크립트들은 여기 아래에 추가 -->
 </body>
 </html>
