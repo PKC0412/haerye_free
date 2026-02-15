@@ -245,10 +245,9 @@
     </div>
 
     <script>
-      // Show promo modal once per session (after 2 minutes)
+      // Show promo modal on every visit (after 2 minutes)
       (function () {
         const DELAY_MS = 120000;
-        const SESSION_KEY = "haerye_promo_shown";
         const REDIRECT_URL = "https://app.haerye.com/";
 
         const modal = document.getElementById("promoModal");
@@ -302,11 +301,8 @@
           });
         }
 
-        if (sessionStorage.getItem(SESSION_KEY) === "1") return;
-
         setTimeout(() => {
           openModal();
-          sessionStorage.setItem(SESSION_KEY, "1");
         }, DELAY_MS);
       })();
     </script>
