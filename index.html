@@ -49,146 +49,7 @@
     .muted { color: #666; }
     footer { margin-top: 34px; padding-top: 18px; border-top: 1px solid #eee; font-size: 0.95rem; }
     footer a { color: inherit; }
-
-    /* Promo Modal Styles */
-    .promo-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.75);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      animation: fadeIn 0.3s ease-out;
-    }
-    .promo-modal.active {
-      display: flex;
-    }
-    .promo-modal-content {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border-radius: 20px;
-      padding: 40px 30px;
-      max-width: 500px;
-      width: 90%;
-      position: relative;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-      animation: slideUp 0.4s ease-out;
-      text-align: center;
-    }
-    .promo-close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.2);
-      border: none;
-      color: white;
-      font-size: 24px;
-      width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-    }
-    .promo-close:hover {
-      background: rgba(255, 255, 255, 0.3);
-      transform: rotate(90deg);
-    }
-    .promo-icon {
-      font-size: 48px;
-      margin-bottom: 15px;
-    }
-    .promo-title {
-      font-size: 26px;
-      font-weight: 700;
-      margin: 0 0 15px;
-      line-height: 1.3;
-    }
-    .promo-subtitle {
-      font-size: 18px;
-      margin: 0 0 20px;
-      opacity: 0.95;
-      font-weight: 500;
-    }
-    .promo-highlight {
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 12px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-    .promo-discount {
-      font-size: 42px;
-      font-weight: 800;
-      margin: 0 0 8px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    }
-    .promo-code-label {
-      font-size: 14px;
-      opacity: 0.9;
-      margin: 0 0 8px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-    .promo-code {
-      font-size: 24px;
-      font-weight: 700;
-      font-family: 'Courier New', monospace;
-      background: rgba(255, 255, 255, 0.3);
-      padding: 8px 20px;
-      border-radius: 8px;
-      display: inline-block;
-      letter-spacing: 2px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .promo-code:hover {
-      background: rgba(255, 255, 255, 0.4);
-      transform: scale(1.05);
-    }
-    .promo-cta {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 15px 40px;
-      background: white;
-      color: #667eea;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 18px;
-      transition: all 0.3s;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    }
-    .promo-cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
-    .promo-note {
-      font-size: 13px;
-      margin-top: 20px;
-      opacity: 0.85;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes slideUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @media (max-width: 600px) {
-      .promo-modal-content {
-        padding: 30px 20px;
-      }
-      .promo-title {
+.promo-title {
         font-size: 22px;
       }
       .promo-discount {
@@ -198,7 +59,11 @@
         font-size: 20px;
       }
     }
-  </style>
+  
+  .footer-promo{margin-top:14px}
+  .footer-promo .promo-cta{display:inline-block;margin-top:6px}
+
+</style>
 </head>
 
 <body>
@@ -256,124 +121,17 @@
         <a href="/refunds">Refund / Cancellation Policy</a>
       </p>
       <p class="muted">Contact: pkc0412@gmail.com</p>
-    </footer>
-  </main>
-
-  <!-- Promo Modal -->
-  <div id="promoModal" class="promo-modal">
-    <div class="promo-modal-content">
-      <button class="promo-close" onclick="closePromoModal()">✖</button>
-
-      <div class="promo-icon">🎉</div>
-
-      <h2 class="promo-title">
-        해례 Haerye Pro Launch Event!
-      </h2>
-
-      <p class="promo-subtitle">
-        Get ready for premium features
-      </p>
-
-      <div class="promo-highlight">
-        <div class="promo-discount">30% OFF</div>
-        <p class="promo-code-label">Limited to first 30 subscribers</p>
-        <div class="promo-code" onclick="copyPromoCode()" title="Click to copy">
-          IXNTA1OQ
-        </div>
+    
+      <div class="footer-promo">
+        <a href="https://app.haerye.com/" class="promo-cta" target="_blank" rel="noopener">
+          Get Haerye Pro →
+        </a>
+        <p class="promo-note">🔥 Don't miss out! Limited-time offer</p>
       </div>
+</footer>
 
-      <a href="https://app.haerye.com/" class="promo-cta" target="_blank">
-        Get Haerye Pro →
-      </a>
-
-      <p class="promo-note">
-        🔥 Don't miss out! Limited-time offer
-      </p>
-    </div>
+  </main>
+</div>
   </div>
-
-  <script>
-    // Show promo modal once per session
-    (function() {
-      const PROMO_SHOWN_KEY = 'haerye_promo_shown';
-      const modal = document.getElementById('promoModal');
-
-      // Check if modal was already shown in this session
-      const wasShown = sessionStorage.getItem(PROMO_SHOWN_KEY);
-
-      if (!wasShown && modal) {
-        // Show modal after 1 second
-        setTimeout(function() {
-          modal.classList.add('active');
-          sessionStorage.setItem(PROMO_SHOWN_KEY, 'true');
-        }, 1000);
-      }
-    })();
-
-    function closePromoModal() {
-      const modal = document.getElementById('promoModal');
-      if (modal) {
-        modal.classList.remove('active');
-      }
-    }
-
-    function copyPromoCode() {
-      const code = 'IXNTA1OQ';
-
-      // Modern clipboard API
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(code).then(function() {
-          showCopyFeedback();
-        }).catch(function() {
-          fallbackCopy(code);
-        });
-      } else {
-        fallbackCopy(code);
-      }
-    }
-
-    function fallbackCopy(text) {
-      const textarea = document.createElement('textarea');
-      textarea.value = text;
-      textarea.style.position = 'fixed';
-      textarea.style.opacity = '0';
-      document.body.appendChild(textarea);
-      textarea.select();
-
-      try {
-        document.execCommand('copy');
-        showCopyFeedback();
-      } catch (err) {
-        console.error('Copy failed:', err);
-      }
-
-      document.body.removeChild(textarea);
-    }
-
-    function showCopyFeedback() {
-      const codeEl = document.querySelector('.promo-code');
-      if (codeEl) {
-        const originalText = codeEl.textContent;
-        codeEl.textContent = '✓ Copied!';
-        setTimeout(function() {
-          codeEl.textContent = originalText;
-        }, 2000);
-      }
-    }
-
-    // Close modal on overlay click
-    document.getElementById('promoModal')?.addEventListener('click', function(e) {
-      if (e.target === this) {
-        closePromoModal();
-      }
-    });
-
-    // Close modal on ESC key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        closePromoModal();
-      }
-    });
-  </script>
 </body>
 </html>

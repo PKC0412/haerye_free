@@ -56,6 +56,44 @@
     <link rel="stylesheet" href="css/components/components.settings.css">
     <link rel="stylesheet" href="css/pages/grammar.css">
     <link rel="stylesheet" href="css/pages/home-main.css">
+<style>
+
+    /* Promo Modal Styles */
+    .promo-modal{position:fixed;inset:0;display:none;z-index:9999}
+    .promo-modal.is-open{display:block}
+    .promo-modal__backdrop{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+    .promo-modal__dialog{
+      position:relative;
+      max-width:520px;
+      margin:10vh auto 0;
+      background:#fff;
+      border-radius:18px;
+      padding:22px 20px 18px;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+    .promo-modal__close{
+      position:absolute;top:10px;right:12px;
+      width:36px;height:36px;border:0;background:transparent;
+      font-size:26px;line-height:36px;cursor:pointer
+    }
+    .promo-modal__title{margin:0 0 10px;font-size:20px}
+    .promo-modal__desc{margin:0 0 14px;line-height:1.4}
+    .promo-modal__bullets{margin:0 0 14px;padding-left:18px}
+    .promo-modal__codeWrap{display:flex;gap:10px;align-items:center;margin:10px 0 16px}
+    .promo-modal__code{
+      padding:8px 10px;border-radius:10px;background:#f3f4f6;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+      font-size:14px;
+    }
+    .promo-modal__btnRow{display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
+    .promo-modal__btn{
+      padding:10px 14px;border-radius:12px;border:1px solid rgba(0,0,0,.12);
+      background:#fff;cursor:pointer
+    }
+    .promo-modal__btn--primary{background:#111;color:#fff;border-color:#111}
+    .promo-modal__note{margin:10px 0 0;font-size:12px;opacity:.75}
+
+</style>
 </head>
 <body>
     <div class="pc-wrapper">
@@ -85,7 +123,7 @@
                 <!-- Content Sections -->
                 <section id="hangul-section" class="content-section" style="display: none;">
                     <div class="section-header">
-                        <h2 data-i18n="menu.hangul">한글 배우기</h2>
+                        <h2>한글 배우기</h2>
                         <button class="close-btn" onclick="showWelcome()">✖</button>
                     </div>
                     <div id="hangul-container" class="hangul-container"></div>
@@ -93,7 +131,7 @@
 
                 <section id="vocabulary-section" class="content-section" style="display: none;">
                     <div class="section-header">
-                        <h2 data-i18n="menu.vocabulary">단어장</h2>
+                        <h2>단어장</h2>
                         <button class="close-btn" onclick="showWelcome()">✖</button>
                     </div>
                     <div id="vocabulary-container" class="vocabulary-container"></div>
@@ -101,7 +139,7 @@
 
                 <section id="flashcard-section" class="content-section" style="display: none;">
                     <div class="section-header">
-                        <h2 data-i18n="menu.flashcard">플래시카드</h2>
+                        <h2>플래시카드</h2>
                         <button class="close-btn" onclick="showWelcome()">✖</button>
                     </div>
                     <div id="flashcard-container" class="flashcard-container"></div>
@@ -109,7 +147,7 @@
 
                 <section id="grammar-section" class="content-section" style="display: none;">
                     <div class="section-header">
-                        <h2 data-i18n="menu.grammar">문법</h2>
+                        <h2>문법</h2>
                         <button class="close-btn" onclick="showWelcome()">✖</button>
                     </div>
                     <div id="grammar-container" class="grammar-container"></div>
@@ -171,5 +209,107 @@
 
     <!-- Scroll to Top Button (독립적) -->
     <script src="js/features/scroll-button.js"></script>
+
+    <!-- Promo Modal -->
+    <div id="promoModal" class="promo-modal" aria-hidden="true">
+      <div class="promo-modal__backdrop" data-promo-close></div>
+      <div class="promo-modal__dialog" role="dialog" aria-modal="true" aria-label="Launch promotion">
+        <button class="promo-modal__close" type="button" data-promo-close aria-label="Close">×</button>
+
+        <h2 class="promo-modal__title">Launch Promotion</h2>
+        <p class="promo-modal__desc">
+          Word + Grammar + AI, pronunciation practice, dictation + member features
+        </p>
+
+        <ul class="promo-modal__bullets">
+          <li>10-minute free trial</li>
+          <li>First 30 users: 30% off</li>
+        </ul>
+
+        <div class="promo-modal__codeWrap">
+          <span class="promo-modal__code" id="promoCode" aria-label="Coupon code">IXNTA1OQ</span>
+          <button class="promo-modal__btn" id="promoCopyBtn" type="button">Copy coupon</button>
+        </div>
+
+        <div class="promo-modal__btnRow">
+          <button class="promo-modal__btn" type="button" data-promo-close>Not now</button>
+          <button class="promo-modal__btn promo-modal__btn--primary" id="promoGoBtn" type="button">
+            Start free trial
+          </button>
+        </div>
+
+        <p class="promo-modal__note">
+          You will be redirected to the app.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // Show promo modal once per session (after 2 minutes)
+      (function () {
+        const DELAY_MS = 120000;
+        const SESSION_KEY = "haerye_promo_shown";
+        const REDIRECT_URL = "https://app.haerye.com/";
+
+        const modal = document.getElementById("promoModal");
+        if (!modal) return;
+
+        const openModal = () => {
+          modal.classList.add("is-open");
+          modal.setAttribute("aria-hidden", "false");
+        };
+
+        const closeModal = () => {
+          modal.classList.remove("is-open");
+          modal.setAttribute("aria-hidden", "true");
+        };
+
+        modal.addEventListener("click", (e) => {
+          if (e.target && e.target.matches("[data-promo-close]")) {
+            closeModal();
+          }
+        });
+
+        const copyBtn = document.getElementById("promoCopyBtn");
+        const codeEl = document.getElementById("promoCode");
+        if (copyBtn && codeEl) {
+          copyBtn.addEventListener("click", async () => {
+            const code = (codeEl.textContent || "").trim();
+            try {
+              await navigator.clipboard.writeText(code);
+              const prev = copyBtn.textContent;
+              copyBtn.textContent = "Copied!";
+              setTimeout(() => { copyBtn.textContent = prev; }, 1200);
+            } catch (err) {
+              try {
+                const range = document.createRange();
+                range.selectNodeContents(codeEl);
+                const sel = window.getSelection();
+                sel.removeAllRanges();
+                sel.addRange(range);
+                alert("Copy failed. The code is selected—please copy it manually.");
+              } catch (e2) {
+                alert("Copy failed. Please copy the coupon code manually.");
+              }
+            }
+          });
+        }
+
+        const goBtn = document.getElementById("promoGoBtn");
+        if (goBtn) {
+          goBtn.addEventListener("click", () => {
+            window.location.href = REDIRECT_URL;
+          });
+        }
+
+        if (sessionStorage.getItem(SESSION_KEY) === "1") return;
+
+        setTimeout(() => {
+          openModal();
+          sessionStorage.setItem(SESSION_KEY, "1");
+        }, DELAY_MS);
+      })();
+    </script>
+
 </body>
 </html>
